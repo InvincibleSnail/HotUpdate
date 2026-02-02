@@ -4,43 +4,21 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-/// <summary>
-/// 最简单的资源热更新 Demo：
-/// 1. 启动时先从本地 persistentDataPath 读取热更后的图片（如果有的话）
-/// 2. 再去服务器（本地文件目录的 file:// 路径）拉取 version.json
-/// 3. 如果发现远端版本号更大，则下载最新的 png，保存到 persistentDataPath，并立即显示
-/// 
-/// 使用方法：
-/// - 将脚本挂在任意场景物体上（例如 Launcher 场景中的一个空物体）
-/// - 在 Inspector 里：
-///   - 把要显示图片的 RawImage 拖到 targetImage
-///   - 把 serverRootUrl 设为形如：
-///     file:///Users/user/Documents/HotUpdate/HotUpdateLocalServer/Simple/
-///   - 确保最后有一个斜杠 /
-/// - 在 HotUpdateLocalServer/Simple 下放置：
-///   - version.json
-///   - ui_bg.png
-/// </summary>
 public class SimpleHotUpdateDemo : MonoBehaviour
 {
-    [Header("服务器根 URL（以 / 结尾）")]
-    [Tooltip("例如：file:///Users/user/Documents/HotUpdate/HotUpdateLocalServer/Simple/")]
-    public string serverRootUrl;
+    [Header("服务器根 URL（以 / 结尾）")] public string serverRootUrl;
 
-    [Header("远端版本文件名")]
-    public string remoteVersionFileName = "version.json";
+    [Header("远端版本文件名")] public string remoteVersionFileName = "version.json";
 
-    [Header("热更图片文件名")]
-    public string hotImageFileName = "ui_bg.png";
+    [Header("热更图片相对路径（在 Simple 根下）")] public string hotImageFileName = "Res/ui_bg.png";
 
-    [Header("显示图片的 RawImage")]
-    public RawImage targetImage;
+    [Header("显示图片的 RawImage")] public RawImage targetImage;
 
     private const string LocalVersionKey = "SimpleHotUpdate_Version";
 
     private string LocalImagePath
     {
-        get { return Path.Combine(Application.persistentDataPath, hotImageFileName); }
+        get { return Path.Combine(Application.dataPath, "Simple/Res", hotImageFileName); }
     }
 
     [System.Serializable]
@@ -52,10 +30,10 @@ public class SimpleHotUpdateDemo : MonoBehaviour
 
     private void Start()
     {
-        // 先尝试加载本地已热更的图片（如果有）
+        // 编辑器默认：工程外层 HotUpdateLocalServer/Simple/；用 HTTP 时在 Inspector 填 http://localhost:8080/
+        if (string.IsNullOrEmpty(serverRootUrl))
+            serverRootUrl = Path.Combine(Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName, "HotUpdateLocalServer", "Simple") + Path.DirectorySeparatorChar;
         TryLoadLocalImage();
-
-        // 然后去检查服务器版本并拉取更新
         if (!string.IsNullOrEmpty(serverRootUrl))
         {
             StartCoroutine(CheckAndUpdateCoroutine());
@@ -144,8 +122,7 @@ public class SimpleHotUpdateDemo : MonoBehaviour
             {
                 Debug.Log("[SimpleHotUpdateDemo] 发现新版本，开始下载图片。");
                 yield return StartCoroutine(DownloadAndApplyImage());
-
-                // 如果下载成功，则更新本地版本号
+                
                 PlayerPrefs.SetInt(LocalVersionKey, remoteVersion);
                 PlayerPrefs.Save();
             }
@@ -222,7 +199,6 @@ public class SimpleHotUpdateDemo : MonoBehaviour
         }
 
         targetImage.texture = tex;
-        // 可选：让 RawImage 按原图大小显示
         targetImage.SetNativeSize();
     }
 
@@ -233,4 +209,3 @@ public class SimpleHotUpdateDemo : MonoBehaviour
         return root + fileName;
     }
 }
-
