@@ -750,7 +750,7 @@ MonoBehaviour:
   updateButton: {fileID: 244431769}
   serverRootUrl: http://localhost:8080/
   remoteVersionFileName: version.json
-  hotImageFileName: ui_bg.png
+  hotImageFileName: Res/ui_bg.png
   targetImage: {fileID: 1201287863}
 --- !u!1 &2105260817
 GameObject:

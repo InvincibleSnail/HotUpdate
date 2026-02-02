@@ -178,7 +178,7 @@ public class SimpleHotUpdateDemo : MonoBehaviour
             if (req.isNetworkError || req.isHttpError)
 #endif
             {
-                Debug.LogError("[SimpleHotUpdateDemo] 下载图片失败: " + req.error);
+                Debug.LogError($"[SimpleHotUpdateDemo] 下载图片失败: {req.error}\n请确认：1) server 从 Simple 目录启动；2) 浏览器打开该 URL 能否访问：{fileUrl}");
                 yield break;
             }
 
@@ -236,6 +236,8 @@ public class SimpleHotUpdateDemo : MonoBehaviour
     {
         if (string.IsNullOrEmpty(root)) return fileName;
         if (!root.EndsWith("/")) root += "/";
-        return root + fileName;
+        // URL 路径统一用 /，避免 Windows 下 fileName 带 \ 导致 404
+        string path = (fileName ?? "").Replace('\\', '/').TrimStart('/');
+        return root + path;
     }
 }
