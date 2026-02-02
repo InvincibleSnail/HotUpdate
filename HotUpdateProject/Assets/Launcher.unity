@@ -417,6 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b981014c820ab49ae84402ec51175a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simple: {fileID: 951628743}
+  addressable: {fileID: 2135791314}
+  xlua: {fileID: 1428306077}
+  hybridCLR: {fileID: 980797334}
 --- !u!4 &176614202
 Transform:
   m_ObjectHideFlags: 0
@@ -582,7 +586,7 @@ GameObject:
   - component: {fileID: 951628744}
   - component: {fileID: 951628743}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,7 +707,7 @@ GameObject:
   - component: {fileID: 980797335}
   - component: {fileID: 980797334}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: HybridCLR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,7 +828,7 @@ GameObject:
   - component: {fileID: 1428306078}
   - component: {fileID: 1428306077}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: xlua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1419,7 @@ GameObject:
   - component: {fileID: 2135791315}
   - component: {fileID: 2135791314}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Addressable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

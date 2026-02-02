@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Button = UnityEngine.UI.Button;
 
 public class Launcher : MonoBehaviour
@@ -7,7 +8,7 @@ public class Launcher : MonoBehaviour
     [SerializeField] private Button addressable;
     [SerializeField] private Button xlua;
     [SerializeField] private Button hybridCLR;
-    
+
     void Start()
     {
         var list = new[] { simple, addressable, xlua, hybridCLR };
@@ -15,7 +16,9 @@ public class Launcher : MonoBehaviour
         {
             button.onClick.AddListener(() =>
             {
-                Application.OpenURL(button.name);
+                string buttonText = button.gameObject.name;
+                string scenePath = $"{buttonText}/Scenes/Entry";
+                SceneManager.LoadScene(scenePath);
             });
         }
     }
