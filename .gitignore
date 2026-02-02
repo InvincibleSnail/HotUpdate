@@ -7,12 +7,12 @@ desktop.ini              # Windows专属：文件夹配置
 *~                       # 通用：编辑器临时文件
 
 # 主流编辑器/IDE配置文件（个人开发习惯，不共享）
-.vs/                     # Visual Studio/VS Code 工程配
-.vscode/                 # VS Code 专属配置（launch.json
+.vs/                     # Visual Studio/VS Code 工程配置
+.vscode/                 # VS Code 专属配置
 .idea/                   # Rider/IntelliJ IDEA 专属配置
-*/.vs/                   # Visual Studio/VS Code 工程配置
-*/.vscode/               # VS Code 专属配置（launch.json/settings.json等）
-*/.idea/                 # Rider/IntelliJ IDEA 专属配置
+*/.idea/                 # Rider 任意子目录下的 .idea
+*/.vs/                   # Visual Studio 工程配置
+*/.vscode/               # VS Code 专属配置
 *.suo                    # Visual Studio 解决方案缓存
 *.user                   # Visual Studio 个人配置
 *.userprefs              # Unity/VS 个人偏好配置
