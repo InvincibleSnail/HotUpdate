@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class SimpleHotUpdateDemo : MonoBehaviour
 {
-    [Header("服务器根 URL（以 / 结尾）")] public string serverRootUrl;
+    [SerializeField] private Button updateButton;
+
+    [Header("服务器根 URL（以 / 结尾）")] public string serverRootUrl = "http://localhost:8080/";
 
     [Header("远端版本文件名")] public string remoteVersionFileName = "version.json";
 
@@ -14,11 +16,39 @@ public class SimpleHotUpdateDemo : MonoBehaviour
 
     [Header("显示图片的 RawImage")] public RawImage targetImage;
 
-    private const string LocalVersionKey = "SimpleHotUpdate_Version";
+    private string LocalCacheDir => Path.Combine(Application.persistentDataPath, "Simple");
 
-    private string LocalImagePath
+    private string LocalVersionPath => Path.Combine(LocalCacheDir, remoteVersionFileName);
+
+    private string LocalImagePath => Path.Combine(LocalCacheDir, Path.GetFileName(hotImageFileName));
+
+    private int GetLocalVersion()
     {
-        get { return Path.Combine(Application.dataPath, "Simple/Res", hotImageFileName); }
+        try
+        {
+            if (!File.Exists(LocalVersionPath)) return 0;
+            string json = File.ReadAllText(LocalVersionPath);
+            var info = JsonUtility.FromJson<SimpleVersionFile>(json);
+            return info?.version ?? 0;
+        }
+        catch
+        {
+            return 0;
+        }
+    }
+
+    private void SaveLocalVersion(string json)
+    {
+        try
+        {
+            if (!Directory.Exists(LocalCacheDir))
+                Directory.CreateDirectory(LocalCacheDir);
+            File.WriteAllText(LocalVersionPath, json);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("[SimpleHotUpdateDemo] 写入本地 version.json 失败: " + e);
+        }
     }
 
     [System.Serializable]
@@ -30,18 +60,19 @@ public class SimpleHotUpdateDemo : MonoBehaviour
 
     private void Start()
     {
-        // 编辑器默认：工程外层 HotUpdateLocalServer/Simple/；用 HTTP 时在 Inspector 填 http://localhost:8080/
-        if (string.IsNullOrEmpty(serverRootUrl))
-            serverRootUrl = Path.Combine(Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName, "HotUpdateLocalServer", "Simple") + Path.DirectorySeparatorChar;
         TryLoadLocalImage();
-        if (!string.IsNullOrEmpty(serverRootUrl))
-        {
-            StartCoroutine(CheckAndUpdateCoroutine());
-        }
-        else
-        {
-            Debug.LogWarning("[SimpleHotUpdateDemo] serverRootUrl 未设置，跳过远端检查。");
-        }
+        updateButton.onClick.AddListener(() =>
+            {
+                if (!string.IsNullOrEmpty(serverRootUrl))
+                {
+                    StartCoroutine(CheckAndUpdateCoroutine());
+                }
+                else
+                {
+                    Debug.LogWarning("[SimpleHotUpdateDemo] serverRootUrl 未设置，跳过远端检查。");
+                }
+            }
+        );
     }
 
     private void TryLoadLocalImage()
@@ -51,7 +82,7 @@ public class SimpleHotUpdateDemo : MonoBehaviour
             if (File.Exists(LocalImagePath))
             {
                 byte[] bytes = File.ReadAllBytes(LocalImagePath);
-                if (bytes != null && bytes.Length > 0)
+                if (bytes.Length > 0)
                 {
                     var tex = new Texture2D(2, 2);
                     if (tex.LoadImage(bytes))
@@ -113,7 +144,7 @@ public class SimpleHotUpdateDemo : MonoBehaviour
                 yield break;
             }
 
-            int localVersion = PlayerPrefs.GetInt(LocalVersionKey, 0);
+            int localVersion = GetLocalVersion();
             int remoteVersion = remoteInfo.version;
 
             Debug.Log($"[SimpleHotUpdateDemo] 本地版本: {localVersion}, 远端版本: {remoteVersion}");
@@ -122,9 +153,8 @@ public class SimpleHotUpdateDemo : MonoBehaviour
             {
                 Debug.Log("[SimpleHotUpdateDemo] 发现新版本，开始下载图片。");
                 yield return StartCoroutine(DownloadAndApplyImage());
-                
-                PlayerPrefs.SetInt(LocalVersionKey, remoteVersion);
-                PlayerPrefs.Save();
+
+                SaveLocalVersion(json);
             }
             else
             {
