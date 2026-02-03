@@ -40,3 +40,4 @@ desktop.ini              # Windows专属：文件夹配置
 /HotUpdateProject/UserSettings/
 
 # ===================== serverproj 专属忽略（资源服务器工程）=====================
+/HotUpdateLocalServer/Addressable/Res/*
