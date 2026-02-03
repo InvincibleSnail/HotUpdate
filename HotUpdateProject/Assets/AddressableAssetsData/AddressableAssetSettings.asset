@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 8b096506616a64b97a039a71dedc9291
   m_currentHash:
     serializedVersion: 2
-    Hash: b4c05827736e1f183b159f59019fd357
+    Hash: 872a7629bf737e74ddb8a0b06886704d
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
       - m_Id: 2b746433be6ac44ea94a03ad32196a48
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 6189bc895c4a04e7b932b75b1fe01d37
-        m_Value: ServerData/[BuildTarget]
+        m_Value: ../HotUpdateLocalServer/Addressable/Res
       - m_Id: 65533749f05ed423989dedc36c2fd445
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: 7a45f0c583247456186ab0dda0bc406b
