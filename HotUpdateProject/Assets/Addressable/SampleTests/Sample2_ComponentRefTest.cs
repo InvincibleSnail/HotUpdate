@@ -4,9 +4,13 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 /// <summary>
 /// ComponentReference 需要具体类型才能序列化，这里用 Transform。
+/// 注意：必须提供带 guid 参数的构造函数并传给基类。
 /// </summary>
 [System.Serializable]
-public class MyTransformRef : ComponentReference<Transform> { }
+public class MyTransformRef : ComponentReference<Transform>
+{
+    public MyTransformRef(string guid) : base(guid) { }
+}
 
 /// <summary>
 /// Sample 2 试玩：ComponentReference — 加载后直接得到指定组件（如 Transform）。
