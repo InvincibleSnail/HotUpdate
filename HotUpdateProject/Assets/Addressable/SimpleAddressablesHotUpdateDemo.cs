@@ -15,7 +15,16 @@ using UnityEngine.UI;
 public class SimpleAddressablesHotUpdateDemo : MonoBehaviour
 {
     [SerializeField] private Button _button;
+
+    [Header("服务器")]
     public string versionJsonUrl = "http://localhost:8080/Addressable/version.json";
+
+    [Header("热更成功后实例化")]
+    [Tooltip("远端 catalog 里某个 Prefab 的 Address，加载成功后会在场景中实例化")]
+    public string spawnAssetAddress = "";
+
+    [Tooltip("实例化后的父节点，不填则挂在当前物体下")]
+    public Transform spawnParent;
 
     [System.Serializable]
     private class AddrVersionInfo
@@ -111,6 +120,23 @@ public class SimpleAddressablesHotUpdateDemo : MonoBehaviour
             catch (System.Exception e)
             {
                 Debug.LogError("[AddrHotUpdate] 写本地版本失败: " + e);
+            }
+
+            // 若配置了 spawnAssetAddress，则实例化到场景
+            if (!string.IsNullOrEmpty(spawnAssetAddress))
+            {
+                Transform parent = spawnParent != null ? spawnParent : transform;
+                var instantiateHandle = Addressables.InstantiateAsync(spawnAssetAddress, parent);
+                yield return instantiateHandle;
+
+                if (instantiateHandle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    Debug.Log("[AddrHotUpdate] 已实例化到场景: " + spawnAssetAddress);
+                }
+                else
+                {
+                    Debug.LogWarning("[AddrHotUpdate] 实例化失败（可能无此 Address）: " + spawnAssetAddress + " " + instantiateHandle.OperationException);
+                }
             }
         }
     }
