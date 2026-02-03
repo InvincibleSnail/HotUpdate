@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 8b096506616a64b97a039a71dedc9291
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 769353ca420a648869efb3a75df5dce7
+    m_Address: Assets/Addressable/Res/Cube.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: df797cfc5d31f446d9209e33be424004, type: 2}
   m_SchemaSet:
