@@ -1,0 +1,1 @@
+https://github.com/Unity-Technologies/Addressables-Sample/tree/master
