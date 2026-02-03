@@ -45,8 +45,8 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Simple/SimpleHotUpdateDemo.cs" />
     <Compile Include="Assets/Launcher.cs" />
+    <Compile Include="Assets/Simple/SimpleHotUpdateDemo.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets/xlua/placeholder.txt" />
@@ -723,11 +723,17 @@
     <Reference Include="Unity.Burst">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
@@ -777,6 +783,9 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
@@ -810,8 +819,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>/Users/user/Documents/HotUpdate/HotUpdateProject/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
