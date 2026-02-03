@@ -17,7 +17,7 @@ public class SimpleAddressablesHotUpdateDemo : MonoBehaviour
     [SerializeField] private Button _button;
 
     [Header("服务器")]
-    public string versionJsonUrl = "http://localhost:8080/Addressable/version.json";
+    public string versionJsonUrl = "http://localhost:8080/version.json";
 
     [Header("热更成功后实例化")]
     [Tooltip("远端 catalog 里某个 Prefab 的 Address，加载成功后会在场景中实例化")]

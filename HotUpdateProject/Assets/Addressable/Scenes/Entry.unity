@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 1032673129}
-  versionJsonUrl: http://localhost:8080/Addressable/version.json
+  versionJsonUrl: http://localhost:8080/version.json
   spawnAssetAddress: Assets/Addressable/Res/Cube.prefab
   spawnParent: {fileID: 605678026}
 --- !u!4 &605678026
