@@ -35,9 +35,9 @@ MonoBehaviour:
   m_CheckForContentUpdateRestrictionsOption: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: 
+    m_Id: 6189bc895c4a04e7b932b75b1fe01d37
   m_RemoteCatalogLoadPath:
-    m_Id: 
+    m_Id: 7a45f0c583247456186ab0dda0bc406b
   m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_CertificateHandlerType:
     m_AssemblyName: 
     m_ClassName: 
-  m_ActivePlayerDataBuilderIndex: 4
+  m_ActivePlayerDataBuilderIndex: 3
   m_DataBuilders:
   - {fileID: 11400000, guid: ea935e44a743e4be4b109ce9666e933c, type: 2}
   - {fileID: 11400000, guid: e9f1138d064164483b031538c32818a4, type: 2}

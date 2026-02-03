@@ -98,8 +98,9 @@ public class SimpleAddressablesHotUpdateDemo : MonoBehaviour
             }
 
             Debug.Log("[AddrHotUpdate] 发现新版本，加载远端 catalog: " + remoteInfo.catalogUrl);
+            // autoReleaseHandle 一定要用 false，否则完成后 handle 会被自动 Release，再访问 Status 就会抛 “invalid operation handle”
             AsyncOperationHandle<IResourceLocator> handle =
-                Addressables.LoadContentCatalogAsync(remoteInfo.catalogUrl, true);
+                Addressables.LoadContentCatalogAsync(remoteInfo.catalogUrl, false);
 
             yield return handle;
 
