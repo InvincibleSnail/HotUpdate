@@ -7,8 +7,8 @@ desktop.ini              # Windows专属：文件夹配置
 *~                       # 通用：编辑器临时文件
 
 # 主流编辑器/IDE配置文件（个人开发习惯，不共享）
-*.sln                    # Visual Studio 解决方案文件
-*.csproj                 # C# 项目文件
+*.sln                    # Visual Studio 解决方案文件（根目录）
+*.csproj                 # C# 项目文件（根目录）
 *.unityproj              # Unity 项目文件
 .vs/                     # Visual Studio/VS Code 工程配置
 .vscode/                 # VS Code 专属配置
@@ -30,6 +30,8 @@ desktop.ini              # Windows专属：文件夹配置
 /output/                 # 根目录若有全局输出文件夹忽略
 
 # ===================== unityproj 专属忽略（Unity客户端工程）=====================
+/HotUpdateProject/*.sln
+/HotUpdateProject/*.csproj
 /HotUpdateProject/Library/      
 /HotUpdateProject/Temp/         
 /HotUpdateProject/obj/          
