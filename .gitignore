@@ -7,6 +7,9 @@ desktop.ini              # Windows专属：文件夹配置
 *~                       # 通用：编辑器临时文件
 
 # 主流编辑器/IDE配置文件（个人开发习惯，不共享）
+*.sln                    # Visual Studio 解决方案文件
+*.csproj                 # C# 项目文件
+*.unityproj              # Unity 项目文件
 .vs/                     # Visual Studio/VS Code 工程配置
 .vscode/                 # VS Code 专属配置
 .idea/                   # Rider/IntelliJ IDEA 专属配置
