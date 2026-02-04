@@ -1,12 +1,11 @@
-# ===================== 全局通用忽略（根目录/所有子工程共用）=====================
-# 跨系统隐藏文件（Windows/Mac/Linux）
+# Cross-system hidden files（Windows/Mac/Linux）
 .DS_Store           
 Thumbs.db           
 desktop.ini         
 *.swp               
 *~                  
 
-# 主流编辑器/IDE配置文件（个人开发习惯，不共享）
+# Configuration files for mainstream editors/IDEs (personal development habits, not shared)
 *.sln                   
 *.csproj                
 *.unityproj             
@@ -24,12 +23,12 @@ desktop.ini
 *.log                   
 *.cache                 
 
-# 全局编译/打包产物（临时生成，不共享）
+# Global compilation/packaging artifacts (temporarily generated, not shared)
 /Build/
 /dist/  
 /output/
 
-# ===================== unityproj 专属忽略（Unity客户端工程）=====================
+# ===================== client =====================
 /HotUpdateProject/*.sln
 /HotUpdateProject/*.csproj
 /HotUpdateProject/Library/      
@@ -40,5 +39,5 @@ desktop.ini
 /HotUpdateProject/UserSettings/
 /HotUpdateProject/HybridCLRData/
 
-# ===================== serverproj 专属忽略（资源服务器工程）=====================
+# ===================== server =====================
 /HotUpdateLocalServer/Addressable/Res/
