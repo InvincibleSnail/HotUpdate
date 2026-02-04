@@ -1,33 +1,33 @@
 # ===================== 全局通用忽略（根目录/所有子工程共用）=====================
 # 跨系统隐藏文件（Windows/Mac/Linux）
-.DS_Store                # Mac专属：文件夹视图配置
-Thumbs.db                # Windows专属：图片缩略图缓存
-desktop.ini              # Windows专属：文件夹配置
-*.swp                    # Linux/Vim专属：临时交换文件
-*~                       # 通用：编辑器临时文件
+.DS_Store           
+Thumbs.db           
+desktop.ini         
+*.swp               
+*~                  
 
 # 主流编辑器/IDE配置文件（个人开发习惯，不共享）
-*.sln                    # Visual Studio 解决方案文件（根目录）
-*.csproj                 # C# 项目文件（根目录）
-*.unityproj              # Unity 项目文件
-.vs/                     # Visual Studio/VS Code 工程配置
-.vscode/                 # VS Code 专属配置
-.idea/                   # Rider/IntelliJ IDEA 专属配置
-*/.idea/                 # Rider 任意子目录下的 .idea
-*/.vs/                   # Visual Studio 工程配置
-*/.vscode/               # VS Code 专属配置
-*.suo                    # Visual Studio 解决方案缓存
-*.user                   # Visual Studio 个人配置
-*.userprefs              # Unity/VS 个人偏好配置
-*.pidb                   # 调试符号文件
-*.pdb                    # 调试数据库文件
-*.log                    # 全局日志文件（所有工程的日志都忽略）
-*.cache                  # 全局缓存文件
+*.sln                   
+*.csproj                
+*.unityproj             
+.vs/                    
+.vscode/                
+.idea/                  
+*/.idea/                
+*/.vs/                  
+*/.vscode/              
+*.suo                   
+*.user                  
+*.userprefs             
+*.pidb                  
+*.pdb                   
+*.log                   
+*.cache                 
 
 # 全局编译/打包产物（临时生成，不共享）
-/Build/                  # 根目录若有全局Build文件夹忽略
-/dist/                   # 根目录若有全局打包产物忽略
-/output/                 # 根目录若有全局输出文件夹忽略
+/Build/
+/dist/  
+/output/
 
 # ===================== unityproj 专属忽略（Unity客户端工程）=====================
 /HotUpdateProject/*.sln
@@ -38,6 +38,7 @@ desktop.ini              # Windows专属：文件夹配置
 /HotUpdateProject/Builds/    
 /HotUpdateProject/Logs/
 /HotUpdateProject/UserSettings/
+/HotUpdateProject/HybridCLRData/
 
 # ===================== serverproj 专属忽略（资源服务器工程）=====================
-/HotUpdateLocalServer/Addressable/Res/*
+/HotUpdateLocalServer/Addressable/Res/
