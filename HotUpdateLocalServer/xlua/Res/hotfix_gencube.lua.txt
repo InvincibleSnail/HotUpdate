@@ -1,0 +1,10 @@
+-- 热修 XLuaDemo.GenShape：将“生成球体”替换为“生成立方体”
+xlua.hotfix(CS.XLuaDemo, 'GenShape', function(self)
+    local GameObject = CS.UnityEngine.GameObject
+    local PrimitiveType = CS.UnityEngine.PrimitiveType
+    local Vector3 = CS.UnityEngine.Vector3
+    local go = GameObject.CreatePrimitive(PrimitiveType.Cube)
+    go.transform.position = Vector3(0, 2, 0)
+    go.name = 'GenShape_Cube'
+    print('[Lua Hotfix] GenShape: 生成立方体（已热修）')
+end)
