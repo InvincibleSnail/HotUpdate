@@ -1,4 +1,4 @@
-# Cross-system hidden files（Windows/Mac/Linux）
+# Cross-system hidden files
 .DS_Store           
 Thumbs.db           
 desktop.ini         
