@@ -1,0 +1,76 @@
+{
+    "Summary": {
+        "YooVersion": "2.3.18",
+        "UnityVersion": "2022.3.62f3",
+        "BuildDate": "2/6/2026 4:55:54 PM",
+        "BuildSeconds": 5,
+        "BuildTarget": 13,
+        "BuildPipeline": "ScriptableBuildPipeline",
+        "BuildBundleType": 2,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2026-02-06-1013",
+        "BuildPackageNote": "2/6/2026 4:55:48 PM",
+        "UniqueBundleName": true,
+        "EnableAddressable": true,
+        "SupportExtensionless": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": true,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "ClearBuildCacheFiles": true,
+        "UseAssetDependencyDB": true,
+        "EnableSharePackRule": true,
+        "SingleReferencedPackAlone": true,
+        "EncryptionServicesClassName": "YooAsset.Editor.EncryptionNone",
+        "ManifestProcessServicesClassName": "YooAsset.Editor.ManifestProcessNone",
+        "ManifestRestoreServicesClassName": "YooAsset.Editor.ManifestRestoreNone",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "ReplaceAssetPathWithAddress": false,
+        "WriteLinkXML": true,
+        "CacheServerHost": "",
+        "CacheServerPort": 0,
+        "BuiltinShadersBundleName": "defaultpackage_unityshaders.bundle",
+        "MonoScriptsBundleName": "",
+        "AssetFileTotalCount": 1,
+        "MainAssetTotalCount": 1,
+        "AllBundleTotalCount": 1,
+        "AllBundleTotalSize": 1705,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "YooTest",
+            "AssetPath": "Assets/YooAsset/Res/YooTest.prefab",
+            "AssetGUID": "822b2a71564404d99a6cbd6f0dc111ee",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_yooasset_res.bundle",
+            "MainBundleSize": 1705,
+            "DependAssets": [],
+            "DependBundles": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "defaultpackage_assets_yooasset_res.bundle",
+            "FileName": "0e52a6202d3460eed2d94ae673f56e7e.bundle",
+            "FileHash": "0e52a6202d3460eed2d94ae673f56e7e",
+            "FileCRC": 2335875706,
+            "FileSize": 1705,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/YooAsset/Res/YooTest.prefab",
+                    "AssetGUID": "822b2a71564404d99a6cbd6f0dc111ee"
+                }
+            ]
+        }
+    ],
+    "IndependAssets": []
+}

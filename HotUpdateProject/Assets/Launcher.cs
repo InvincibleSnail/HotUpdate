@@ -8,6 +8,7 @@ public class Launcher : MonoBehaviour
     [SerializeField] private Button addressable;
     [SerializeField] private Button xlua;
     [SerializeField] private Button hybridCLR;
+    [SerializeField] private Button YooAsset;
 
     void Start()
     {
