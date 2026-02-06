@@ -38,6 +38,7 @@ desktop.ini
 /HotUpdateProject/Logs/
 /HotUpdateProject/UserSettings/
 /HotUpdateProject/HybridCLRData/
+/HotUpdateProject/Bundles/
 
 # ===================== server =====================
 /HotUpdateLocalServer/Addressable/Res/
