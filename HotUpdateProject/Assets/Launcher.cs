@@ -12,7 +12,7 @@ public class Launcher : MonoBehaviour
 
     void Start()
     {
-        var list = new[] { simple, addressable, xlua, hybridCLR };
+        var list = new[] { simple, addressable, xlua, hybridCLR, YooAsset };
         foreach (var button in list)
         {
             button.onClick.AddListener(() =>
